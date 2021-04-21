@@ -2,8 +2,8 @@ package died.guia5;
 
 public class ServicioEstandar extends Servicio {
 
-	Double montoFijo;
-	Double comisionTrabajador;
+	private Double montoFijo;
+	private Double comisionTrabajador;
 	
 	@Override
 	public Double costo() {

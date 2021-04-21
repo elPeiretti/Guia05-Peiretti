@@ -2,9 +2,9 @@ package died.guia5;
 
 public class ServicioPersonalizado extends Servicio{
 
-	Double presupuesto;
-	Double costoMateriales;
-	Double costoTransporte;
+	private Double presupuesto;
+	private Double costoMateriales;
+	private Double costoTransporte;
 	
 	@Override
 	public Double costo() {

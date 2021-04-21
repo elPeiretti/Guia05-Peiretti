@@ -3,8 +3,8 @@ import java.time.*;
 
 public class Trabajo implements Contratable{
 	
-	LocalDate fechaInicio;
-	LocalDate fechaFin;
+	private LocalDate fechaInicio;
+	private LocalDate fechaFin;
 	
 	public boolean finalizado() {
 		return fechaFin!=null;
@@ -15,6 +15,13 @@ public class Trabajo implements Contratable{
 		// TODO Auto-generated method stub
 		return null;
 		
+	}
+
+	public LocalDate getFechaInicio() {
+		return fechaInicio;
+	}
+	public LocalDate gerFechaFin() {
+		return fechaFin;
 	}
 	
 }

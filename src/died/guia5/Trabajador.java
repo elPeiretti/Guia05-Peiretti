@@ -3,13 +3,35 @@ import java.util.ArrayList;
 
 public class Trabajador {
 	
-	ArrayList<Trabajo> Trabajos;
-	String nombre;
-	String email;
-	Oficio oficio;
-	Double costoPorHora;
-	Double comision;
+	private ArrayList<Trabajo> Trabajos;
+	private String nombre;
 	
-	public void AgregarTarea() {}
+	private String email;
+	private Oficio oficio;
+	private Double costoPorHora;
+	private Double comision;
+	
+	public void AgregarTarea(Trabajo t) {
+		
+	}
 	public void marcarTareaFinalizada() {}
+	
+	public ArrayList<Trabajo> getTrabajos() {
+		return Trabajos;
+	}
+	public String getNombre() {
+		return nombre;
+	}
+	public String getEmail() {
+		return email;
+	}
+	public Oficio getOficio() {
+		return oficio;
+	}
+	public Double getCostoPorHora() {
+		return costoPorHora;
+	}
+	public Double getComision() {
+		return comision;
+	}
 }
