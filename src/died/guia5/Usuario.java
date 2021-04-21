@@ -12,7 +12,7 @@ public class Usuario {
 	public void contratar(Servicio s,Oficio o,boolean urgente) {
 		
 	}
-	public void contratar(LocalDate fechaInic, LocalDate fechaFin) {
+	public void contratar(String nombreHerramienta, LocalDate fechaInic, LocalDate fechaFin) {
 		
 	}
 	

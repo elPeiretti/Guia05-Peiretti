@@ -1,10 +1,8 @@
 package died.guia5;
 
-public abstract class Servicio {
+public abstract class Servicio implements Contratable{
 	
 	Oficio tipo;
 	boolean urgente;
 	
-
-	public abstract void costo();
 }

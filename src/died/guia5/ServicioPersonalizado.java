@@ -7,8 +7,11 @@ public class ServicioPersonalizado extends Servicio{
 	Double costoTransporte;
 	
 	@Override
-	public void costo() {
-			
+	public Double costo() {
+		Double c = presupuesto + costoMateriales + costoTransporte;
+		if(this.urgente)
+			return c+c*0.5;
+		return c;
 	}
 
 }

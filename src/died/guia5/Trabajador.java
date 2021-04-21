@@ -11,4 +11,5 @@ public class Trabajador {
 	Double comision;
 	
 	public void AgregarTarea() {}
+	public void marcarTareaFinalizada() {}
 }

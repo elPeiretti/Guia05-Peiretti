@@ -1,21 +1,26 @@
 package died.guia5;
 
 import java.time.*;
-public class Alquiler { // el enunciado trata a la maquina como si fuera herramienta
+import java.time.temporal.ChronoUnit;
+public class Alquiler implements Contratable{ // el enunciado trata a la maquina como si fuera herramienta
 
 	String nombre;
 	LocalDate fechaInicio;
 	LocalDate fechaFin;
-	Instant fechaDevolucion;
+	LocalDate fechaDevolucion;
 	Double costoPorDia;
 	
-	public void costo() {
-		
+	public Double costo() {
+		return costoPorDia*ChronoUnit.DAYS.between(fechaDevolucion, fechaInicio);
 	}
-	public void enMora() {
-		
+	
+	public boolean enMora() {
+		return fechaFin.compareTo(fechaDevolucion) > 0;
 	}
-	public void finalizado() {}
+	
+	public boolean finalizado() {
+		return fechaDevolucion!=null;
+	}
 	
 	
 }
