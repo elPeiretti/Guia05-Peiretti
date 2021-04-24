@@ -7,7 +7,7 @@ public class Usuario {
 	private String nombre;
 	private Integer dni;
 	private Integer alquileresNoDevueltos;
-	private ArrayList<Contratable> Contratados;
+	private ArrayList<Contratable> contratados;
 	
 	public String getNombre() {
 		return nombre;
@@ -15,17 +15,30 @@ public class Usuario {
 	public Integer getDni() {
 		return dni;
 	}
-	public Integer getAlquileresNoDevueltos() {
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public void setDni(Integer dni) {
+		this.dni = dni;
+	}
+	public Integer getCantAlquileresNoDevueltos() {
 		return alquileresNoDevueltos;
 	}
+	
 	public ArrayList<Contratable> getContratados() {
-		return Contratados;
+		return contratados;
 	}
-	public void contratar(Servicio s,Oficio o,boolean urgente) {
-		
+	public void contratar(Servicio s) {		
+		this.contratados.add(s);
 	}
-	public void contratar(String nombreHerramienta, LocalDate fechaInic, LocalDate fechaFin) {
-		
+	public void contratar(Alquiler a) throws AlquilerNoEntregadoException{
+		if(alquileresNoDevueltos>1) {
+			throw new AlquilerNoEntregadoException();
+		}
+		else {
+			this.contratados.add(a);
+			this.alquileresNoDevueltos++;
+		}
 	}
 	
 	

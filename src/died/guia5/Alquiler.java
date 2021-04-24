@@ -25,6 +25,42 @@ public class Alquiler implements Contratable{ // el enunciado trata a la maquina
 	public String getNombre() {
 		return nombre;
 	}
+
+	public LocalDate getFechaInicio() {
+		return fechaInicio;
+	}
+
+	public void setFechaInicio(LocalDate fechaInicio) {
+		this.fechaInicio = fechaInicio;
+	}
+
+	public LocalDate getFechaFin() {
+		return fechaFin;
+	}
+
+	public void setFechaFin(LocalDate fechaFin) {
+		this.fechaFin = fechaFin;
+	}
+
+	public LocalDate getFechaDevolucion() {
+		return fechaDevolucion;
+	}
+
+	public void setFechaDevolucion(LocalDate fechaDevolucion) {
+		this.fechaDevolucion = fechaDevolucion;
+	}
+
+	public Double getCostoPorDia() {
+		return costoPorDia;
+	}
+
+	public void setCostoPorDia(Double costoPorDia) {
+		this.costoPorDia = costoPorDia;
+	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
 	
 	
 }

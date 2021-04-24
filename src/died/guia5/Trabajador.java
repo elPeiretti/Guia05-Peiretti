@@ -1,23 +1,45 @@
 package died.guia5;
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Trabajador {
 	
-	private ArrayList<Trabajo> Trabajos;
+	private ArrayList<Trabajo> trabajos;
 	private String nombre;
-	
 	private String email;
 	private Oficio oficio;
 	private Double costoPorHora;
 	private Double comision;
 	
-	public void AgregarTarea(Trabajo t) {
+	
+	public void AgregarTarea(Trabajo t) throws OficioNoCoincideException,AgendaOcupadaException{
 		
+		if(!t.getOficioRequerido().equals(this.oficio)) {
+			throw new OficioNoCoincideException(t.getOficioRequerido().getTipo(),this.oficio.getTipo());
+		}
+		else if(!this.disponible()) {
+			throw new AgendaOcupadaException(this.nombre);
+		}
+		else {
+			this.trabajos.add(t);
+		}
 	}
-	public void marcarTareaFinalizada() {}
+	
+	public boolean disponible() {
+		
+		if(this.trabajos.isEmpty()) return true;
+		
+		//si el ultimo trabajo no esta finalizado, no esta disponible
+		return this.trabajos.get(this.trabajos.size()-1).finalizado();
+	}
+	
+	public void marcarTareaFinalizada(Trabajo t) {
+		Integer index = this.trabajos.indexOf(t);
+		this.trabajos.get(index).setFechaFin(LocalDate.now());
+	}
 	
 	public ArrayList<Trabajo> getTrabajos() {
-		return Trabajos;
+		return trabajos;
 	}
 	public String getNombre() {
 		return nombre;
@@ -34,4 +56,25 @@ public class Trabajador {
 	public Double getComision() {
 		return comision;
 	}
+
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public void setOficio(Oficio oficio) {
+		this.oficio = oficio;
+	}
+
+	public void setCostoPorHora(Double costoPorHora) {
+		this.costoPorHora = costoPorHora;
+	}
+
+	public void setComision(Double comision) {
+		this.comision = comision;
+	}
+	
 }

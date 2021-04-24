@@ -3,17 +3,18 @@ import java.time.*;
 import java.util.ArrayList;
 
 
-public class Trabajo implements Contratable{
+public class Trabajo{
 	
 	private LocalDate fechaInicio;
 	private LocalDate fechaFin;
+	private Oficio oficioRequerido;
 	ArrayList<Servicio>Servicios;
 	
 	public boolean finalizado() {
 		return fechaFin!=null;
 	}
 
-	@Override
+	
 	public Double costo() {
 		Double total=0d;
 		for(Servicio s: Servicios) {
@@ -27,8 +28,18 @@ public class Trabajo implements Contratable{
 	public LocalDate getFechaInicio() {
 		return fechaInicio;
 	}
-	public LocalDate gerFechaFin() {
+	public LocalDate getFechaFin() {
 		return fechaFin;
+	}
+	public void setFechaFin(LocalDate f) {
+		this.fechaFin=f;
+	}
+
+	public Oficio getOficioRequerido() {
+		return oficioRequerido;
+	}
+	public void setOficioRequerido(Oficio oficioRequerido) {
+		this.oficioRequerido=oficioRequerido;
 	}
 	
 }
