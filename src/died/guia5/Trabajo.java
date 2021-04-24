@@ -10,6 +10,12 @@ public class Trabajo{
 	private Oficio oficioRequerido;
 	ArrayList<Servicio>Servicios;
 	
+	public Trabajo(LocalDate fechaInicio, Oficio oficio) {
+		this.fechaInicio=fechaInicio;
+		this.oficioRequerido=oficio;
+		this.Servicios=new ArrayList<Servicio>();
+	}
+	
 	public boolean finalizado() {
 		return fechaFin!=null;
 	}

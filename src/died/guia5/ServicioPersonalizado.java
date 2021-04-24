@@ -6,6 +6,14 @@ public class ServicioPersonalizado extends Servicio{
 	private Double costoMateriales;
 	private Double costoTransporte;
 	
+	public ServicioPersonalizado(Oficio tipo, Double presupuesto, Double costoMateriales, Double costoTransporte, boolean urgente) {
+		this.presupuesto=presupuesto;
+		this.costoMateriales=costoMateriales;
+		this.costoTransporte=costoTransporte;
+		this.tipo=tipo;
+		this.urgente=urgente;
+	}
+	
 	@Override
 	public Double costo() {
 		Double c = presupuesto + costoMateriales + costoTransporte;

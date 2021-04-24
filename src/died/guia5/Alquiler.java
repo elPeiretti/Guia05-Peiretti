@@ -10,6 +10,12 @@ public class Alquiler implements Contratable{ // el enunciado trata a la maquina
 	private LocalDate fechaDevolucion;
 	private Double costoPorDia;
 	
+	public Alquiler(String nombre, LocalDate fechaInicio, Double costoPorDia) {
+		this.nombre=nombre;
+		this.fechaInicio=fechaInicio;
+		this.costoPorDia=costoPorDia;
+	}
+	
 	public Double costo() {
 		return costoPorDia*ChronoUnit.DAYS.between(fechaDevolucion, fechaInicio);
 	}

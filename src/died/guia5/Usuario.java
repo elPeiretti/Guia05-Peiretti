@@ -1,6 +1,5 @@
 package died.guia5;
 import java.util.ArrayList;
-import java.time.*;
 
 public class Usuario {
 	
@@ -8,6 +7,13 @@ public class Usuario {
 	private Integer dni;
 	private Integer alquileresNoDevueltos;
 	private ArrayList<Contratable> contratados;
+	
+	public Usuario(String nombre, Integer dni) {
+		this.nombre=nombre;
+		this.dni=dni;
+		this.alquileresNoDevueltos=0;
+		this.contratados=new ArrayList<Contratable>();
+	}
 	
 	public String getNombre() {
 		return nombre;
