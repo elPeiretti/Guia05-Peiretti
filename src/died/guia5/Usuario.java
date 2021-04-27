@@ -47,5 +47,14 @@ public class Usuario {
 		}
 	}
 	
+	public Double totalConsumido() {
+		Double total=0d;
+		for(Contratable c: this.contratados) {
+			total+=c.costo();
+		}
+		return total;
+	}
+	
+	
 	
 }

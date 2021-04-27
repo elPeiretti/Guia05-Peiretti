@@ -10,18 +10,20 @@ public class Alquiler implements Contratable{ // el enunciado trata a la maquina
 	private LocalDate fechaDevolucion;
 	private Double costoPorDia;
 	
-	public Alquiler(String nombre, LocalDate fechaInicio, Double costoPorDia) {
+	public Alquiler(String nombre, LocalDate fechaInicio,LocalDate fechaFin ,Double costoPorDia) {
 		this.nombre=nombre;
 		this.fechaInicio=fechaInicio;
+		this.fechaFin=fechaFin;
 		this.costoPorDia=costoPorDia;
 	}
 	
 	public Double costo() {
-		return costoPorDia*ChronoUnit.DAYS.between(fechaDevolucion, fechaInicio);
+		if(!this.finalizado()) return 0d;
+		return costoPorDia*ChronoUnit.DAYS.between(fechaInicio,fechaDevolucion);
 	}
 	
 	public boolean enMora() {
-		return fechaFin.compareTo(fechaDevolucion) > 0;
+		return fechaFin.compareTo(fechaFin) > 0;
 	}
 	
 	public boolean finalizado() {
